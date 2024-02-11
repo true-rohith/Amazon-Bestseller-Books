@@ -15,10 +15,14 @@
 .container-parts{
   display: flex;
   margin: 30px;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: start;
 }
 .container-sidebar{
   margin-right: 200px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 .container-sidebar p{
   color: black;
@@ -27,9 +31,23 @@
   border-left: 2px solid #d3d3d3;
 }
 .container-right-sidebar h1{
-  margin-left: 20px;
+  padding-left: 20px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 2px solid gray;
 }
 
+@media (max-width : 600px) {
+  .container-sidebar{
+    margin-left: 0px;
+    margin-right: 30px;
+  }
+  .container-parts{
+    width: 100vw;
+    margin: 5px;
+  }
+}
 
 
 /********** STYLING FOR HEADER *************/
@@ -54,6 +72,19 @@
   font-size: 18px;
 }
 
+@media (max-width:600px) {
+  .header-container{
+    height: 70px;
+    justify-content: center;
+  }
+  .header-container h1{
+    font-size: 20px;
+  }
+  .header-container p{
+    font-size: 10px;
+  }
+}
+
 
 /******** Styling For Card ********/
 
@@ -65,18 +96,20 @@
 }
 .card-container img{
   margin-top: 15px;
-  max-width: 300px;
-  max-height: 200px;
+  width: 300px;
+  height: 200px;
 }
 .card-values{
   margin-bottom: 10px;
 }
 .card-numbering{
-  font-size: 16px;
+  font-size: 14px;
   width: 20px;
   height: 20px;
   background: orange;
   text-align: center;
+  border-top-left-radius: 5px;
+  border-end-end-radius: 5px;
 }
 .card-title{
   cursor: pointer;
@@ -91,4 +124,37 @@
   cursor: pointer;
   font-size: 15px;
   color: #B12704;
+}
+
+@media(max-width:600px) {
+  .container-right-sidebar h1{
+    font-size: 20px;
+  }
+  .card-container{
+    border: 2px solid #d3d3d3;
+    width: 180px;
+    height: 220px;
+    padding: 7px;
+    overflow: auto;
+  }
+  .card-container img{
+    margin-top: 15px;
+    width: 150px;
+    height: 100px;
+  }
+  .card-title{
+    font-size: 13px;
+  }
+  .card-numbering{
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    text-align: center;
+  }
+  .card-rating{
+    font-size: 10px;
+  }
+  .card-price{
+    font-size: 12px;
+  }
 }
